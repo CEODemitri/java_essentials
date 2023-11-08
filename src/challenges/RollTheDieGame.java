@@ -13,17 +13,17 @@ public class RollTheDieGame {
 
         for(int i=1; i<maxRolls; i++){
 
-            int die = random.nextInt(bound:6) + 1;
+            int die = random.nextInt(6) + 1;
             currentSpace = currentSpace + die;
 
-            System.out.print(String.format("Roll #%d. You've rolled a %d. ", i, die));
+            System.out.printf("Roll #%d. You've rolled a %d. ", i, die);
 
             if(currentSpace == lastSpace){
                 System.out.print("You are on space " + currentSpace + ". Congrats, you win!");
                 break;
             } else if (currentSpace > lastSpace) {
                 System.out.print("ooh, that takes you past " + lastSpace + " spaces. You lose!");
-            } else if (i == maxRolls && currentSpace < lastSpace) {
+            } else if (i == maxRolls && (currentSpace < lastSpace)) {
                 System.out.println("You are on space " + currentSpace + ".");
                 System.out.println("Unfortunately, you didn't make it to all " + lastSpace + " spaces. You lose!");
             } else {
